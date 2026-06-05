@@ -1,0 +1,23 @@
+# Node
+node_modules/
+.next/
+out/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Environment
+.env
+.env.local
+
+# Uploads
+uploads/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
