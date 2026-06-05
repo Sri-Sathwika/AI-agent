@@ -13,16 +13,25 @@ import {
 import { toast } from "react-hot-toast";
 
 import MessageBubble from "./MessageBubble";
-import { Message } from "@/types";
 import { api } from "@/lib/api";
 import { getSessionId } from "@/lib/session";
 import { documentStore } from "@/lib/documentStore";
+
+type ChatMessage = {
+  role: "user" | "assistant";
+  content: string;
+  sources?: {
+    source: string;
+    page: string;
+    content: string;
+  }[];
+};
 
 export default function ChatArea() {
   const bottomRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [loading, setLoading] = useState(false);
   const [input, setInput] = useState("");
 
@@ -54,12 +63,28 @@ export default function ChatArea() {
         message: question,
       });
 
+      const sources =
+        res.data.sources?.map(
+          (source: {
+            source: string;
+            page: string | number;
+            content: string;
+          }): {
+            source: string;
+            page: string;
+            content: string;
+          } => ({
+            ...source,
+            page: String(source.page),
+          })
+        ) || [];
+
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
           content: res.data.answer,
-          sources: res.data.sources || [],
+          sources,
         },
       ]);
     } catch (error) {

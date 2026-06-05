@@ -10,7 +10,7 @@ interface Props {
 
   sources?: {
     source: string;
-    page: number;
+    page: string;
     content: string;
   }[];
 }
@@ -47,7 +47,7 @@ export default function MessageBubble({
           ${
             isUser
               ? `
-                bg-gradient-to-r
+                bg-linear-to-r
                 from-purple-600
                 to-fuchsia-600
               `
