@@ -16,6 +16,7 @@ import MessageBubble from "./MessageBubble";
 import { Message } from "@/types";
 import { api } from "@/lib/api";
 import { getSessionId } from "@/lib/session";
+import { documentStore } from "@/lib/documentStore";
 
 export default function ChatArea() {
   const bottomRef = useRef<HTMLDivElement>(null);
@@ -321,7 +322,7 @@ export default function ChatArea() {
         <div
           className="
             glass
-            rounded-[32px]
+            rounded-4xl
             p-4
           "
         >
@@ -333,8 +334,8 @@ export default function ChatArea() {
                 fileInputRef.current?.click()
               }
               className="
-                h-[60px]
-                w-[60px]
+                h-15
+                w-15
                 shrink-0
                 rounded-2xl
                 glass
@@ -384,11 +385,11 @@ export default function ChatArea() {
               onClick={sendMessage}
               disabled={loading}
               className="
-                h-[60px]
-                w-[60px]
+                h-15
+                w-15
                 shrink-0
                 rounded-2xl
-                bg-gradient-to-r
+                bg-linear-to-r
                 from-purple-600
                 to-fuchsia-600
                 flex
