@@ -1,7 +1,4 @@
-# langgraph
-# tools
-# retriever
-# chat logic
+print("RAG AGENT LOADED")
 
 from typing import TypedDict,Annotated,Sequence
 from langgraph.graph import StateGraph,START,END

@@ -1,3 +1,5 @@
+print("MAIN LOADED")
+
 from fastapi import FastAPI
 from routers.upload import router as upload_router
 from routers.chat import router as chat_router

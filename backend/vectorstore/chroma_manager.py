@@ -4,25 +4,37 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 import os
 
-embeddings = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
-)
+_embeddings = None
+
+def get_embeddings():
+    global _embeddings
+
+    if _embeddings is None:
+        print("LOADING EMBEDDINGS")
+
+        _embeddings = HuggingFaceEmbeddings(
+            model_name="sentence-transformers/all-MiniLM-L6-v2"
+        )
+
+    return _embeddings
 
 PERSIST_DIRECTORY = "./chroma_db"
 COLLECTION_NAME = "stock_market"
 
 
-def get_vectorstore():
-    """
-    Opens existing Chroma collection.
-    Creates it if it doesn't exist.
-    """
+_vectorstore = None
 
-    return Chroma(
-        persist_directory=PERSIST_DIRECTORY,
-        collection_name=COLLECTION_NAME,
-        embedding_function=embeddings,
-    )
+def get_vectorstore():
+    global _vectorstore
+
+    if _vectorstore is None:
+        _vectorstore = Chroma(
+            persist_directory=PERSIST_DIRECTORY,
+            collection_name=COLLECTION_NAME,
+            embedding_function=get_embeddings(),
+        )
+
+    return _vectorstore
 
 
 def ingest_pdf(pdf_path):

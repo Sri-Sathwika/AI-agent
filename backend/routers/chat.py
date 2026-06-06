@@ -1,3 +1,5 @@
+print("CHAT ROUTER LOADED")
+
 from fastapi import APIRouter
 from pydantic import BaseModel
 from agents.rag_agent import rag_agent
