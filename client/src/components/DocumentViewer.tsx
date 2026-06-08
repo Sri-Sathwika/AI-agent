@@ -87,7 +87,7 @@ export default function DocumentViewer() {
       </div>
 
       <iframe
-        src={`http://127.0.0.1:8000/uploads/${documentName}`}
+        src={`https://ai-agent-ehy0.onrender.com/uploads/${documentName}`}
         className="flex-1 w-full"
       />
     </div>
