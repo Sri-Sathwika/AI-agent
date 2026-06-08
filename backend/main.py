@@ -70,7 +70,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",
         "http://127.0.0.1:3000",
-        "https://ai-agent-yn7l-h3ihkp5yx-sri-sathwikas-projects.vercel.app/",
+        "https://ai-agent-flame-three.vercel.app/",
     ],
     allow_credentials=True,
     allow_methods=["*"],
