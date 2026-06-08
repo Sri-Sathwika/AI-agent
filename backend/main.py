@@ -51,7 +51,14 @@ app.include_router(
     prefix="/sessions",
     tags=["Sessions"]    
 )
-    
+
+import os
+
+os.makedirs("uploads", exist_ok=True)
+
+print("CWD:", os.getcwd())
+print("Uploads exists:", os.path.exists("uploads"))
+
 app.mount(
     "/uploads",
     StaticFiles(directory="uploads"),
