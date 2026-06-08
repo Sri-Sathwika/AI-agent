@@ -14,7 +14,7 @@ def get_embeddings():
         print("LOADING EMBEDDINGS")
 
         _embeddings = GoogleGenerativeAIEmbeddings(
-            model="models/text-embedding-004"
+            model="models/text-embedding-001"
         )
 
     return _embeddings
