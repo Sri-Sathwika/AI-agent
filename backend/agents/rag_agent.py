@@ -1,9 +1,11 @@
-print("RAG AGENT LOADED")
+print("RAG START")
 
 from typing import TypedDict,Annotated,Sequence
 from langgraph.graph import StateGraph,START,END
 from vectorstore.chroma_manager import get_retriever
+print("AFTER RETRIEVER IMPORT")
 from langchain_google_genai import ChatGoogleGenerativeAI
+print("AFTER FEMINI IMPORT")
 from langchain_core.messages import BaseMessage,SystemMessage,HumanMessage,ToolMessage
 from langchain_core.tools import tool
 from operator import add as add_messages
@@ -185,6 +187,8 @@ graph.add_edge("retriever_agent", "llm")
 graph.set_entry_point("llm")
 
 rag_agent = graph.compile()
+
+print("RAG END")
 
 def running_agent():
     print("\n=== RAG AGENT===")

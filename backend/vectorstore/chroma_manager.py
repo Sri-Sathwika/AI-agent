@@ -1,10 +1,11 @@
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_chroma import Chroma
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 import os
 
 _embeddings = None
+
 
 def get_embeddings():
     raise Exception("CALLEd")
@@ -13,17 +14,19 @@ def get_embeddings():
     if _embeddings is None:
         print("LOADING EMBEDDINGS")
 
-        _embeddings = HuggingFaceEmbeddings(
-            model_name="sentence-transformers/all-MiniLM-L6-v2"
+        _embeddings = GoogleGenerativeAIEmbeddings(
+            model="models/text-embedding-004"
         )
 
     return _embeddings
+
 
 PERSIST_DIRECTORY = "./chroma_db"
 COLLECTION_NAME = "stock_market"
 
 
 _vectorstore = None
+
 
 def get_vectorstore():
     global _vectorstore

@@ -1,11 +1,25 @@
-print("MAIN LOADED")
+print("1")
 
 from fastapi import FastAPI
+
+print("2")
+
 from routers.upload import router as upload_router
+
+print("3")
+
 from routers.chat import router as chat_router
+
+print("4")
+
 from routers.documents import router as documents_router
-from fastapi.middleware.cors import CORSMiddleware
+
+print("5")
+
 from routers.sessions import router as sessions_router
+
+print("6")
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 app = FastAPI(

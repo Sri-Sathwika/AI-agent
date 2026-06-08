@@ -1,4 +1,4 @@
-print("CHAT ROUTER LOADED")
+print("CHAT A")
 
 from fastapi import APIRouter
 from pydantic import BaseModel
@@ -9,6 +9,7 @@ from memory.chat_memory import (
     add_user_message,
     add_ai_message
 )
+print("CHAT B")
 
 router = APIRouter()
 
