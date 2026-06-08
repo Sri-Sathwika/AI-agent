@@ -1,4 +1,4 @@
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_chroma import Chroma
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
@@ -13,8 +13,8 @@ def get_embeddings():
     if _embeddings is None:
         print("LOADING EMBEDDINGS")
 
-        _embeddings = HuggingFaceEmbeddingsEmbeddings(
-            model_name="sentence-transformers/paraphrase-MiniLM-L3-v2"
+        _embeddings = GoogleGenerativeAIEmbeddings(
+            model="gemini-embedding-2"
         )
 
     return _embeddings
