@@ -12,7 +12,7 @@ from operator import add as add_messages
 from dotenv import load_dotenv
 load_dotenv()
 
-llm=ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite",temperature=0)
+llm=ChatGoogleGenerativeAI(model="gemini-2.5-flash",temperature=0)
 
 @tool
 def retriever_tool(query: str):
