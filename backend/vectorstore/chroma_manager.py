@@ -7,6 +7,7 @@ import os
 _embeddings = None
 
 def get_embeddings():
+    raise Exception("CALLEd")
     global _embeddings
 
     if _embeddings is None:
