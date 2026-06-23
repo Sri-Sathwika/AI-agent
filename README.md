@@ -157,7 +157,7 @@ AI-agent/
 - Session history is maintained for context awareness
 - Previous messages inform future responses
 
-## 🔌 API Endpoints
+## API Endpoints
 
 ### Chat
 - **POST** `/chat/` - Send a message and get a response
