@@ -2,7 +2,7 @@
 
 A full-stack AI research assistant application featuring a RAG (Retrieval-Augmented Generation) agent powered by Google Gemini, document processing, and a modern Next.js frontend.
 
-## 📋 Overview
+## Overview
 
 **ResearchAI** is an intelligent document-based Q&A system that allows users to:
 - Upload PDF documents
@@ -12,7 +12,7 @@ A full-stack AI research assistant application featuring a RAG (Retrieval-Augmen
 
 The application uses a **Retrieval-Augmented Generation (RAG)** approach to ensure answers are grounded in the actual document content rather than relying solely on the LLM's training data.
 
-## 🏗️ Architecture
+## Architecture
 
 ### Backend
 - **Framework**: FastAPI
@@ -28,7 +28,7 @@ The application uses a **Retrieval-Augmented Generation (RAG)** approach to ensu
 - **UI Components**: Lucide React Icons
 - **Markdown**: React Markdown
 
-## 🚀 Features
+## Features
 
 - **Document Upload**: Upload PDF files to the knowledge base
 - **Smart Retrieval**: Vector-based document retrieval with Chroma
@@ -38,7 +38,7 @@ The application uses a **Retrieval-Augmented Generation (RAG)** approach to ensu
 - **REST API**: FastAPI backend with CORS support
 - **Modern UI**: Responsive Next.js frontend with Tailwind styling
 
-## 📦 Tech Stack
+## Tech Stack
 
 ### Backend Dependencies (Key)
 - `fastapi` - Web framework
@@ -57,7 +57,7 @@ The application uses a **Retrieval-Augmented Generation (RAG)** approach to ensu
 - `axios` - HTTP client
 - `tailwindcss` - CSS framework
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 AI-agent/
@@ -83,7 +83,7 @@ AI-agent/
 └── README.md
 ```
 
-## 🔧 Installation
+## Installation
 
 ### Prerequisites
 - Python 3.8 or higher
@@ -139,7 +139,7 @@ AI-agent/
    ```
    The frontend will be available at `http://localhost:3000`
 
-## 🎯 Usage
+## Usage
 
 ### 1. Upload Documents
 - Navigate to the frontend (http://localhost:3000)
@@ -180,7 +180,7 @@ AI-agent/
 - **GET** `/sessions/` - List all sessions
 - **GET** `/sessions/{id}` - Get session details
 
-## 🧠 How the RAG Agent Works
+## How the RAG Agent Works
 
 1. **User Query**: User sends a question through the chat interface
 2. **LLM Processing**: The query is sent to the RAG agent's LLM component
@@ -190,7 +190,7 @@ AI-agent/
 6. **Answer Generation**: The LLM generates a comprehensive answer using the context
 7. **Response**: The answer with source citations is returned to the user
 
-## 🔐 Environment Variables
+## Environment Variables
 
 Create a `.env` file in the backend directory:
 ```
@@ -198,7 +198,7 @@ GOOGLE_API_KEY=your_google_api_key
 ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
 ```
 
-## 📝 Key Routers
+## Key Routers
 
 ### `/chat` - Chat Router
 Handles multi-turn conversations with session management and RAG agent integration.
@@ -212,7 +212,7 @@ Manages document metadata and retrieval.
 ### `/sessions` - Sessions Router
 Manages conversation sessions and history.
 
-## 🛠️ Development
+## Development
 
 ### Backend Development
 - API runs on `http://localhost:8000`
@@ -224,7 +224,7 @@ Manages conversation sessions and history.
 - Hot reload enabled by default
 - TypeScript support for type safety
 
-## 🚢 Deployment
+## Deployment
 
 ### Backend Deployment
 The backend is designed to be deployed on:
@@ -236,7 +236,7 @@ The backend is designed to be deployed on:
 ### Frontend Deployment
 The frontend is deployed on Vercel (see `.vercel.json` or `next.config.ts`).
 
-## 📚 Key Technologies Explained
+## Key Technologies Explained
 
 ### LangChain & LangGraph
 - **LangChain**: Provides utilities for working with LLMs, including tools, memory, and chains
@@ -248,7 +248,7 @@ Vector database for semantic search of document embeddings, enabling efficient r
 ### Google Generative AI
 Powers the LLM using Google's Gemini 2.5 Flash model for fast, cost-effective inference.
 
-## 📖 Example Workflow
+## Example Workflow
 
 ```
 1. User uploads "research_paper.pdf"
@@ -262,7 +262,7 @@ Powers the LLM using Google's Gemini 2.5 Flash model for fast, cost-effective in
    e. Returns: "The main findings are... (Source: research_paper.pdf page 5)"
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -272,18 +272,18 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is open source and available under the MIT License.
 
-## 📧 Contact
+## Contact
 
 For questions or inquiries:
 - **Author**: Sri-Sathwika
 - **Email**: sathwika0112@gmail.com
 - **Repository**: https://github.com/Sri-Sathwika/AI-agent
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [LangChain](https://langchain.com/) - LLM framework
 - [LangGraph](https://langchain-js.vercel.app/docs/langgraph) - Agentic framework
